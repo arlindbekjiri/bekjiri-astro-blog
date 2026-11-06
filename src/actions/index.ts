@@ -43,7 +43,7 @@ ${body}
         if (err?.code === 'EEXIST') {
           throw new ActionError({ code: 'CONFLICT', message: `Es gibt schon einen Beitrag mit dem Slug "${slug}".` });
         }
-        // Auf Vercel ist das Dateisystem read-only: klare Meldung statt Absturz.
+        // Auf Vercel ist das Dateisystem read-only.
         if (['EROFS', 'EACCES', 'EPERM'].includes(err?.code)) {
           throw new ActionError({
             code: 'NOT_IMPLEMENTED',
