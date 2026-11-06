@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import NewPostForm from '../../components/NewPostForm.jsx';
+---
+
+<BaseLayout pageTitle="Neuer Beitrag" description="Formular zum Anlegen eines neuen Blog-Beitrags (React-Insel mit Astro Action).">
+  <p>Das Formular ist eine React-Insel. Es speichert den Beitrag als Markdown-Datei in <code>src/blog/</code>. Das klappt nur lokal mit <code>npm run dev</code>.</p>
+  <NewPostForm client:load />
+</BaseLayout>
